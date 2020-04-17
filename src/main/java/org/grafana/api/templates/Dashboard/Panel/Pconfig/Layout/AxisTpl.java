@@ -16,6 +16,9 @@ public class AxisTpl {
     @SerializedName("zeroline")
     @Expose
     private boolean zeroline;
+    @SerializedName("title")
+    @Expose
+    private String title;
 
     public AxisTpl(){
         this.rangemode = "normal";
@@ -54,5 +57,13 @@ public class AxisTpl {
 
     public void setZeroline(boolean zeroline) {
         this.zeroline = zeroline;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

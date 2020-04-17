@@ -39,6 +39,11 @@ public class PanelTpl {
     @Expose
     private Integer version;
 
+    public PanelTpl(){
+        this.gridPos = new GridPosTpl();
+        this.timefrom = null;
+        this.timeshift = null;
+    }
     /**
      *
      * @return

@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import org.grafana.api.templates.Dashboard.Panel.Pconfig.PconfigLayoutTpl;
 import org.grafana.api.templates.Dashboard.Panel.Pconfig.PconfigSettingsTpl;
+import org.grafana.api.templates.Dashboard.Panel.Pconfig.TracesTpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class PconfigTpl {
     private Boolean showAnnotations;
     @SerializedName("traces")
     @Expose
-    private List<Object> traces = new ArrayList<Object>();
+    private List<TracesTpl> traces = new ArrayList<TracesTpl>();
 
     public PconfigTpl(){
         this.fixScale = "";
@@ -77,11 +78,11 @@ public class PconfigTpl {
         this.showAnnotations = showAnnotations;
     }
 
-    public List<Object> getTraces() {
+    public List<TracesTpl> getTraces() {
         return traces;
     }
 
-    public void setTraces(List<Object> traces) {
+    public void setTraces(List<TracesTpl> traces) {
         this.traces = traces;
     }
 }
