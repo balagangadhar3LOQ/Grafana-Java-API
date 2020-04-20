@@ -20,17 +20,17 @@ public class Example2 {
     public static void main(String args[]){
         Gson gson = new GsonBuilder().create();
         Gson gsonPretty = new GsonBuilder().setPrettyPrinting().create();
-        String grafanaserver = "http://localhost:3000";
-        String mainOrgApiKey = "Bearer eyJrIjoiZ0ZNMVAyY0lTVHNMRzRSMmVMMTdIR0pHazlUSWlZQTUiLCJuIjoiSmF2YSBLZXkiLCJpZCI6MX0=";
+        String grafanaserver = "http://172.105.54.174:9000/";
+        String mainOrgApiKey = "Bearer eyJrIjoiczhIUzB4U1ZSMXhmM0VlMGd2Z01heXFkVnRkZE1qZGwiLCJuIjoiVGVzdCBXaXRoIFNjYWxhIiwiaWQiOjF9";
 
         //Initializing a panel
         BarChartPanel barpanel = new BarChartPanel();
-        barpanel.setDatasource("MySQL-pre");
+        barpanel.setDatasource("PostgreSQL-5");
 
         //Creating a mapping with axes to metrics
         TraceMappingTpl tmpt = new TraceMappingTpl();
-        tmpt.setX("A");
-        tmpt.setY("B");
+        tmpt.setX("a");
+        tmpt.setY("b");
 
         //Creating a trace and passing the mapping object
         TracesTpl trt = new TracesTpl();
@@ -44,7 +44,7 @@ public class Example2 {
         barpanel.setPconfig("XData","YData","bar",TracesTplList);
 
         //Creating a target object which takes in an sql query
-        TargetsTpl tt = new TargetsTpl("select * from sample_table;");
+        TargetsTpl tt = new TargetsTpl("select * from sample_data;");
 
         //Creating a list of target objects and passing a target object to it
         List<Object> TargetsTplList = new ArrayList<>();
@@ -53,7 +53,7 @@ public class Example2 {
         barpanel.setTargets(TargetsTplList);
 
         //Setting title of panel
-        barpanel.setTitle("Bar chart");
+        barpanel.setTitle("Sample Test Panel");
 
         //Choosing type of plugin
         barpanel.setType("natel-plotly-panel");
